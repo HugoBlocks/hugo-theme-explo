@@ -9,11 +9,10 @@
 
         {{ range $i, $e := $features }}
         {{ $features_count := $e | len }}
-        <div class="card {{ if not .alwaysVisible }}d-none d-sm-inline-block{{ end }}">
+        <div class="card {{ if not .alwaysVisible }}d-none d-md-inline-block{{ end }}">
             <div class="card-body">
                 <h3 class="card-title">{{ .heading }}</h3>
                 <p class="card-text tagline">{{ .tagline }}</p>
-                <p class="card-text copy">{{ .copy }}</p>
             </div>
 
             {{ with .techs }}

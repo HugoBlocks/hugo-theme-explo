@@ -3532,6 +3532,9 @@ h3 {
   @media (min-width: 576px) and (max-width: 767px) {
     #features .card-columns {
       column-count: 1; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #features .card-columns {
+      column-count: 2; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     #features .card-columns {
       column-count: 3; } }
@@ -3545,13 +3548,6 @@ h3 {
     #features .card-columns .card .card-footer {
       border-top: 1px solid rgba(241, 182, 26, 0.2);
       background-color: rgba(241, 182, 26, 0.1); }
-  #features .card-columns .picto {
-    display: inline-block;
-    color: #FFF;
-    background-color: #CACACA;
-    line-height: 1.4rem;
-    border-radius: 1rem;
-    padding: 0 0.2rem 0 0.2rem; }
 
 #references a {
   opacity: 0.8; }
