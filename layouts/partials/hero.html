@@ -1,0 +1,38 @@
+<div class="container" id="hero">
+    <div class="row justify-content-center">
+        <div class="col-6 col-sm-5 col-md-3 pic">
+            <img class="img-fluid" src="{{ .Params.intro.image }}"/>
+        </div>
+        <div class="col-8 text-center">
+            <h1>
+                {{ .Params.intro.headline }}
+            </h1>
+            {{ with .Params.intro.subHeadline }}
+            <h2>
+                {{ . }}
+            </h2>
+            {{ end }}
+
+            {{ range .Params.intro.notes }}
+            <p class="lead {{ if .alwaysVisible }}{{ else }}d-none d-sm-block{{ end }}">
+                {{ .headline }}
+            </p>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="push-down-wrapper">
+        <div class="d-flex flex-row justify-content-center" id="cta">
+            <div class="text-center text-sm-right">
+                <a href="#continue" class="btn btn-lg btn-primary" role="button">
+                    My Profile
+                </a>
+            </div>
+            <div class="d-none d-sm-block text-center text-sm-left">
+                <a href="#continue" class="btn btn-lg btn-outline-primary" role="button">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
