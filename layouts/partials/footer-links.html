@@ -21,17 +21,6 @@
     </div>
     {{ end }}
 
-    {{ with .Site.Author.linkedin }}
-    <div class="col">
-        <a href="https://linkedin.com/in/{{ . }}"
-           class="btn-circle"
-           target="_blank"
-           title="linkedin">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-    </div>
-    {{ end }}
-
     {{ with .Site.Author.blog }}
     <div class="col">
         <a href="{{ . }}"
@@ -39,6 +28,17 @@
            target="_blank"
            title="blog">
             <i class="fa fa-rss" aria-hidden="true"></i>
+        </a>
+    </div>
+    {{ end }}
+
+    {{ with .Site.Author.linkedin }}
+    <div class="col">
+        <a href="https://linkedin.com/in/{{ . }}"
+           class="btn-circle"
+           target="_blank"
+           title="linkedin">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
         </a>
     </div>
     {{ end }}
