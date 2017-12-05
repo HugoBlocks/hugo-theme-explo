@@ -3589,9 +3589,10 @@ body {
     border-color: #b4850b; }
 
 .invert {
-  background-color: #F1B61A; }
+  background-color: #F1B61A;
+  color: #140D22; }
   .invert h2 {
-    color: #FBFCFD; }
+    color: #140D22; }
 
 .light h2 {
   color: #565657; }
@@ -3649,12 +3650,14 @@ h3 {
     #features .card-columns {
       column-count: 3; } }
   #features .card-columns .card {
-    color: #F1B61A;
+    color: #FBFCFD;
     background-color: #140D22;
     border-color: #F1B61A; }
     #features .card-columns .card .card-footer {
       border-top: 1px solid rgba(241, 182, 26, 0.2);
       background-color: rgba(241, 182, 26, 0.1); }
+    #features .card-columns .card h3 {
+      color: #F1B61A; }
 
 #references a {
   opacity: 0.8; }
