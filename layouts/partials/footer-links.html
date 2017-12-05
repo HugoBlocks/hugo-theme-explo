@@ -37,8 +37,19 @@
         <a href="{{ . }}"
            class="btn-circle"
            target="_blank"
-           title="linkedin">
+           title="blog">
             <i class="fa fa-rss" aria-hidden="true"></i>
+        </a>
+    </div>
+    {{ end }}
+
+    {{ with .Site.Author.angellist }}
+    <div class="col">
+        <a href="https://angel.co/{{ . }}"
+           class="btn-circle"
+           target="_blank"
+           title="angel">
+            <i class="fa fa-angellist" aria-hidden="true"></i>
         </a>
     </div>
     {{ end }}
