@@ -3478,6 +3478,9 @@ a.text-dark:focus, a.text-dark:hover {
   .d-print-none {
     display: none !important; } }
 
+body {
+  scroll-behavior: smooth; }
+
 .push-down-wrapper {
   position: absolute;
   bottom: 0;
@@ -3516,9 +3519,21 @@ h3 {
   margin-bottom: 1rem; }
 
 #hero {
-  margin-top: 15vh;
-  min-height: 65vh;
-  position: relative; }
+  margin-top: 6vh;
+  min-height: 73vh;
+  position: relative;
+  padding-bottom: 5rem; }
+  #hero .highlight {
+    color: #F1B61A; }
+  #hero .intro {
+    opacity: 0.8; }
+  #hero .tagline {
+    color: #F1B61A;
+    text-align: center; }
+  #hero .leads {
+    margin-top: 1rem; }
+  #hero .lead {
+    opacity: 0.8; }
   #hero .pic img {
     border-radius: 50%;
     border: #211734 5px solid; }

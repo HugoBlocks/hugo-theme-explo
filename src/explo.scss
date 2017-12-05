@@ -47,6 +47,10 @@ $headings-font-family: 'EB Garamond', serif;
 // Custom Design
 // =============
 
+body {
+  scroll-behavior: smooth;
+}
+
 .push-down-wrapper {
   position: absolute;
   bottom: 0;
@@ -98,9 +102,31 @@ h3 {
 }
 
 #hero {
-  margin-top: 15vh;
-  min-height: 65vh;
+  margin-top: 6vh;
+  min-height: 73vh;
   position: relative;
+  padding-bottom: 5rem;
+
+  .highlight {
+    color: $warm-yellow;
+  }
+
+  .intro {
+    opacity: 0.8;
+  }
+
+  .tagline {
+    color: $heavy-yellow;
+    text-align: center;
+  }
+
+  .leads {
+    margin-top: 1rem;
+  }
+
+  .lead {
+    opacity: 0.8;
+  }
 
   .pic {
     img {
