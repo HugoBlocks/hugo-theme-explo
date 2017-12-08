@@ -46,8 +46,8 @@
     <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.cover }}"/>
     <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.cover }}"/>
     {{ else if .Site.Author.image }}
-    <meta property="og:image" content="{{ .Site.Author.image }}"/>
-    <meta name="twitter:image" content="{{ .Site.Author.image }}"/>
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Author.image }}"/>
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Site.Author.image }}"/>
     {{ end }}
 
     {{ if .IsTranslated }}
