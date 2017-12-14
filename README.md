@@ -9,7 +9,7 @@ https://lsenta.io
 Use `npm` to compile the SASS code,
 
 - `npm install`: setup the javascript code (sass & bootstrap)
-- `npm build`: build the static css once
-- `npm watch`: during development, auto-compile
+- `npm run build`: build the static css once
+- `npm run watch`: during development, auto-compile
 
 
