@@ -9550,6 +9550,9 @@ h3 {
 .blog #hero {
   margin-top: 6vh;
   min-height: 33vh; }
+  .blog #hero h2 {
+    color: #89898a;
+    font-size: 1.2em; }
 
 .blog .main {
   margin-bottom: 5rem; }

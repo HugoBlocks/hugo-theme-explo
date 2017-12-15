@@ -193,6 +193,11 @@ h3 {
 .blog #hero {
   margin-top: 6vh;
   min-height: 33vh;
+
+  h2 {
+    color: lighten($corporate-grey, 20%);
+    font-size: 1.2em;
+  }
 }
 
 .blog .main {
