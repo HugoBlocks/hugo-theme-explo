@@ -1,19 +1,11 @@
 {{ define "main" }}
-{{ partial "components/header.html" . }}
 
-<div class="blog">
-    {{ partial "blog/hero" . }}
-
-    <div class="white-bg">
-        <div class="marged">
-            <div class="container-fluid">
-                <section class="main">
-                    {{ partial "blog/list-posts" . }}
-                </section>
-            </div>
-
-            {{ partial "contact.html" . }}
-        </div>
-    </div>
+<div class="landing">
+    {{ partial "landing/hero.html" . }}
+    {{ partial "landing/benefit-list.html" . }}
+    {{ partial "landing/feature-list.html" . }}
+    {{ partial "landing/reference-list.html" . }}
+    {{ partial "contact.html" . }}
 </div>
+
 {{ end }}
