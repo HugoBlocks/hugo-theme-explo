@@ -1,9 +1,19 @@
 {{ define "main" }}
+{{ partial "components/header.html" . }}
 
-{{ partial "hero.html" . }}
-{{ partial "benefit-list.html" . }}
-{{ partial "feature-list.html" . }}
-{{ partial "reference-list.html" . }}
-{{ partial "contact.html" . }}
+<div class="blog">
+    {{ partial "blog/hero" . }}
 
+    <div class="white-bg">
+        <div class="marged">
+            <div class="container-fluid">
+                <section class="main">
+                    {{ partial "blog/list-posts" . }}
+                </section>
+            </div>
+
+            {{ partial "contact.html" . }}
+        </div>
+    </div>
+</div>
 {{ end }}

@@ -45,10 +45,17 @@ $headings-font-family: 'EB Garamond', serif;
 @import "node_modules/bootstrap/scss/utilities/spacing";
 @import "node_modules/bootstrap/scss/utilities/display";
 
+// Are you missing a component import? uncomment:
+// TODO: broken navbar, miss an import
+@import "node_modules/bootstrap/scss/bootstrap";
+
 // Custom Design
 // =============
+html {
+}
 
 body {
+  background: url("/pattern.png") repeat;
   scroll-behavior: smooth;
 }
 
@@ -68,6 +75,15 @@ body {
 
   &:hover {
     border-color: $link-hover-color;
+  }
+}
+
+a.btn-circle {
+  transition: all linear 0.1s;
+
+  &:hover {
+    background-color: $heavy-yellow;
+    color: $balanced-white;
   }
 }
 
@@ -94,8 +110,74 @@ h2 {
   margin-top: 1rem;
 }
 
+.marged {
+  padding: 1rem;
+}
+
 h3 {
   width: 100%;
+}
+
+.white-bg {
+  background-color: $balanced-white;
+  color: $heavy-purple;
+}
+
+.content-wrapper {
+  width: 95%;
+  margin: auto;
+}
+
+.single {
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.post-content {
+  font-size: 1.2rem;
+  line-height: 1.58;
+  font-weight: 200;
+
+  h2 {
+    margin-top: 0.78em;
+    margin-bottom: 0.3em;
+    font-size: 1.7rem;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-weight: 700;
+  }
+
+  ol {
+    display: block;
+    width: 100%;
+  }
+
+  p {
+    width: 100%;
+  }
+
+  img {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre {
+    width: 100%;
+    background-color: #1b1e21;
+    color: #2daf10;
+    border: 1px solid #222;
+    border-radius: 0.9em;
+    padding: 1em;
+  }
+
+  blockquote {
+    width: 80%;
+    margin: auto;
+    display: inline-block;
+    color: #5d5d5d;
+  }
+
 }
 
 .jumbotron {
@@ -103,9 +185,25 @@ h3 {
   margin-bottom: 1rem;
 }
 
-#hero {
+.landing #hero {
   margin-top: 6vh;
   min-height: 73vh;
+}
+
+.blog #hero {
+  margin-top: 6vh;
+  min-height: 33vh;
+}
+
+.blog .main {
+  margin-bottom: 5rem;
+}
+
+.pagination {
+  margin: 5rem 2rem 2rem 2rem;
+}
+
+#hero {
   position: relative;
   padding-bottom: 5rem;
 
