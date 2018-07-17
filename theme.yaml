@@ -1,0 +1,10 @@
+name: "Explo"
+license: "MIT"
+licenselink: "https://raw.githubusercontent.com/lsenta/hugo-theme-explo/master/LICENSE.md"
+description: "Explo is a clean and simple theme for explorers, originally designed by @lsenta / @laurentsenta"
+homepage: "https://github.com/lsenta/hugo-theme-explo"
+tags: ["landing", "blog", "dark", "purple", "lsenta"]
+taxonomies:
+  tag: "tags"
+#TODO: features : ["blog", "disqus", "google analytics", "pagination", "rss", "sharing options"]
+#TODO: min_version : 0.14

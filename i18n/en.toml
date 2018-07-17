@@ -10,9 +10,6 @@ other = "Learn More"
 [readmore]
 other = "Read More"
 
-[connect_with_us]
-other = "Connect with us"
-
 [with_the_tags]
 other = "With the tags"
 
@@ -36,4 +33,3 @@ other = "First Name"
 
 [field_email]
 other = "Email Address"
-

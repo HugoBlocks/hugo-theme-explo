@@ -1,15 +1,13 @@
 {{ define "main" }}
 {{ partial "components/header.html" . }}
 
-<div class="blog">
-    {{ partial "blog/hero" . }}
-
+<div class="blog single">
     <div class="white-bg">
-        {{ with .Params.cover }}
+    {{ with .Params.cover }}
         <div class="cover"
              style="background-image: url('{{ . | absURL }}');"
         ></div>
-        {{ end }}
+    {{ end }}
 
         <div class="container single">
             <section class="main">
@@ -21,18 +19,18 @@
 
                 <div class="row justify-content-center post-content">
                     <div class="col-8 col-md-10">
-                        {{ .Content }}
+                    {{ .Content }}
                     </div>
                 </div>
             </section>
 
-            {{ if .Site.DisqusShortname }}
+        {{ partial "blog/pagination-single" . }}
+
             <div class="row comments">
                 <div class="col-12">
-                    {{ template "_internal/disqus.html" . }}
+                {{ template "_internal/disqus.html" . }}
                 </div>
             </div>
-            {{ end }}
         </div>
     </div>
 </div>

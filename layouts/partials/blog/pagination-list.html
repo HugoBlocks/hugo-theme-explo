@@ -1,14 +1,14 @@
-<nav aria-label="Posts List">
+<nav aria-label="Blog List">
     <ul class="pagination justify-content-center">
-        {{ if .Paginator.HasNext }}
+    {{ if .Paginator.HasNext }}
         <li class="page-item">
             <a class="page-link" href="{{ .Paginator.Next.URL }}">Previous</a>
         </li>
-        {{ else }}
+    {{ else }}
         <li class="page-item disabled">
             <span class="page-link">Previous</span>
         </li>
-        {{ end }}
+    {{ end }}
 
         <li class="page-item disabled">
             <span class="page-link">
@@ -16,14 +16,14 @@
             </span>
         </li>
 
-        {{ if .Paginator.HasPrev }}
+    {{ if .Paginator.HasPrev }}
         <li class="page-item">
             <a class="page-link" href="{{ .Paginator.Prev.URL }}">Next</a>
         </li>
-        {{ else }}
+    {{ else }}
         <li class="page-item disabled">
             <span class="page-link">Next</span>
         </li>
-        {{ end }}
+    {{ end }}
     </ul>
 </nav>

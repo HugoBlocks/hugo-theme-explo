@@ -54,6 +54,10 @@ $headings-font-family: 'EB Garamond', serif;
 html {
 }
 
+.container-fluid.blog-header {
+  padding: 0;
+}
+
 body {
   background: url("/pattern.png") repeat;
   scroll-behavior: smooth;
@@ -76,6 +80,10 @@ body {
   &:hover {
     border-color: $link-hover-color;
   }
+}
+
+.bg-translucent {
+  background-color: #ffffff0a;
 }
 
 a.btn-circle {
@@ -110,12 +118,12 @@ h2 {
   margin-top: 1rem;
 }
 
-.marged {
-  padding: 1rem;
-}
-
 h3 {
   width: 100%;
+}
+
+.marged {
+  padding: 1rem;
 }
 
 .white-bg {
@@ -129,7 +137,12 @@ h3 {
 }
 
 .single {
-  padding: 2rem 1rem 2rem 1rem;
+  .cover {
+    height: 40vh;
+    margin-bottom: 1rem;
+    background-size: 100% auto;
+    background-position: center center;
+  }
 }
 
 .post-content {
@@ -156,7 +169,13 @@ h3 {
     width: 100%;
   }
 
+  .figure {
+    width: 100%;
+    text-align: center;
+  }
+
   img {
+    display: block;
     margin: auto;
     max-width: 100%;
     height: auto;
@@ -177,7 +196,6 @@ h3 {
     display: inline-block;
     color: #5d5d5d;
   }
-
 }
 
 .jumbotron {
@@ -186,12 +204,10 @@ h3 {
 }
 
 .landing #hero {
-  margin-top: 6vh;
   min-height: 73vh;
 }
 
 .blog #hero {
-  margin-top: 6vh;
   min-height: 33vh;
 
   h2 {
@@ -209,6 +225,7 @@ h3 {
 }
 
 #hero {
+  margin-top: 6vh;
   position: relative;
   padding-bottom: 5rem;
 

@@ -10,9 +10,6 @@ other = "Détails"
 [readmore]
 other = "Lire la suite"
 
-[connect_with_us]
-other = "Connectez-vous"
-
 [with_the_tags]
 other = "Avec les tags"
 
@@ -29,7 +26,7 @@ other = "S'inscrire"
 other = "Abonnez-vous à notre Newsletter"
 
 [subscribe_description]
-other = "Abonnez-vous pour recevoir nos prochaines publications, des exemples et des guides."
+other = "Abonnez-vous pour recevoir nos prochains articles, des exemples et des guides."
 
 [field_firstname]
 other = "Prénom"
