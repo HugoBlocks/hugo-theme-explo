@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ if .Params.LanguageCode }}{{ .Params.LanguageCode }}{{ else }}{{ .Site.LanguageCode }}{{ end }}">
 <head>
+{{ with .Site.Params.Analytics.Google }}
+    {{ partial "analytics/google.html" .}}
+{{ end }}
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,8 +73,8 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,600" rel="stylesheet">
+
     <!-- Explo -->
     <link rel="stylesheet" href="/css/explo.css">
 
