@@ -4,9 +4,6 @@ other = "In English / Anglais"
 [fr]
 other = "In French / Français"
 
-[learnmore]
-other = "Learn More"
-
 [readmore]
 other = "Read More"
 
@@ -31,5 +28,14 @@ other = "Subscribe to receive our next articles, examples & guides."
 [field_firstname]
 other = "First Name"
 
+[field_name]
+other = "Name"
+
 [field_email]
 other = "Email Address"
+
+[learnmore]
+other = "Learn More"
+
+[contactme]
+other = "Contact Me"

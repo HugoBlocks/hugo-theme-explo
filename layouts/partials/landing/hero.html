@@ -5,21 +5,21 @@
         </div>
         <div class="col-8">
             <h2 class="intro text-center text-md-left">
-                {{ .Params.intro.headline }}
+            {{ .Params.intro.headline }}
             </h2>
 
-            {{ with .Params.intro.tagline }}
+        {{ with .Params.intro.tagline }}
             <h1 class="tagline mt-4 text-center text-md-left">
-                {{ . }}
+            {{ . }}
             </h1>
-            {{ end }}
+        {{ end }}
 
             <div class="leads mt-md-5 text-center text-md-left">
-                {{ range .Params.intro.notes }}
+            {{ range .Params.intro.notes }}
                 <p class="lead {{ if eq .priority 1 }}{{end}}{{ if eq .priority 2 }}d-none d-md-block{{ end }}{{if eq .priority 3}}d-none d-lg-block{{ end }}">
-                    {{ .headline | safeHTML }}
+                {{ .headline | safeHTML }}
                 </p>
-                {{ end }}
+            {{ end }}
             </div>
         </div>
     </div>
@@ -30,14 +30,14 @@
                 <a href="#benefits" class="btn btn-lg btn-primary" role="button"
                    data-scroll
                 >
-                    Learn More
+                {{ i18n "learnmore" }}
                 </a>
             </div>
             <div class="d-none d-sm-block text-center text-sm-left">
                 <a href="#contact" class="btn btn-lg btn-outline-primary" role="button"
                    data-scroll
                 >
-                    Contact Me
+                {{ i18n "contactme" }}
                 </a>
             </div>
         </div>

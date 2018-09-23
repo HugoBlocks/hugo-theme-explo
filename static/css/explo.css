@@ -10146,14 +10146,14 @@ a.btn-circle {
 .light h2 {
   color: #565657; }
 
-h2 {
+.landing h2 {
   text-align: center;
   color: #FBFCFD;
   font-weight: 200;
   margin-bottom: 1rem;
   margin-top: 1rem; }
 
-h3 {
+.landing h3 {
   width: 100%; }
 
 .marged {

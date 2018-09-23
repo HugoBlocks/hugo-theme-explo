@@ -3,11 +3,11 @@
 
 <div class="blog single">
     <div class="white-bg">
-    {{ with .Params.cover }}
+        {{ with .Params.cover }}
         <div class="cover"
              style="background-image: url('{{ . | absURL }}');"
         ></div>
-    {{ end }}
+        {{ end }}
 
         <div class="container single">
             <section class="main">
@@ -19,16 +19,18 @@
 
                 <div class="row justify-content-center post-content">
                     <div class="col-12 col-md-10 col-lg-8">
-                    {{ .Content }}
+                        {{ .Content }}
                     </div>
                 </div>
             </section>
 
-        {{ partial "blog/pagination-single" . }}
+            {{ partial "blog/pagination-single" . }}
+
+            {{ partial "signup.html" . }}
 
             <div class="row comments">
                 <div class="col-12">
-                {{ template "_internal/disqus.html" . }}
+                    {{ template "_internal/disqus.html" . }}
                 </div>
             </div>
         </div>
