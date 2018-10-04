@@ -4,6 +4,7 @@
 @import "../bootstrap/card";
 @import "../bootstrap/forms";
 @import "../bootstrap/images";
+@import "../bootstrap/jumbotron";
 @import "../colors.scss";
 @import "../utils";
 
@@ -178,6 +179,67 @@
           @extend %btn-cta;
         }
       }
+    }
+  }
+
+  .projects {
+    @extend .container;
+
+    .items {
+      @extend .card-columns;
+
+      .item {
+        @extend .card;
+
+        &.priority-1 {
+          @extend .d-none;
+          @extend .d-md-inline-block;
+        }
+
+        .body {
+          @extend .card-body;
+
+          h3 {
+            @extend .card-title;
+          }
+          p {
+            @extend .card-text;
+          }
+        }
+
+        .badges {
+          @extend .card-footer;
+
+          .badge {
+            @extend .badge-pill;
+            @extend .badge-primary;
+          }
+        }
+      }
+    }
+
+  }
+
+  .references {
+    @extend .jumbotron;
+    @extend .jumbotron-fluid;
+
+    .items {
+      @extend .row;
+      @extend .align-items-center;
+      @extend .justify-content-center;
+
+      .item {
+        @extend .col-4;
+        @extend .col-sm-3;
+        @extend .col-md-2;
+
+        img {
+          @extend .img-fluid;
+        }
+
+      }
+
     }
   }
 

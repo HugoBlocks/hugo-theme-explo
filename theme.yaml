@@ -1,11 +1,11 @@
-name: "hugoblocks"
+name: "hugo-theme-explo"
 license: "MIT"
-licenselink: "https://raw.githubusercontent.com/lsenta/hugoblocks/master/LICENSE"
-description: "HugoBlocks is a theme & framework to build more with Hugo"
-homepage: "https://www.hugoblocks.com"
-tags: ["landing", "blog", "blocks", "framework", "lsenta"]
+licenselink: "https://raw.githubusercontent.com/lsenta/hugo-theme-explo/master/LICENSE"
+description: "Explo is a clean and simple theme for explorers, originally designed by @lsenta / @laurentsenta"
+homepage: "https://github.com/HugoBlocks/hugo-theme-explo"
+tags: ["landing", "blog", "blocks", "hugoblocks", "dark", "purple", "yellow", "lsenta"]
 taxonomies:
   tag: "tags"
   category: "categories"
 features: ["blog", "disqus", "google analytics", "pagination", "rss"]
-min_version : 0.48
+min_version: 0.48
