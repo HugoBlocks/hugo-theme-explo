@@ -18,12 +18,12 @@
 }
 
 .btn-circle {
-  border: 2px solid $secondary;
   display: inline-block;
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
   line-height: 5.7rem;
+  font-size: 3.5rem;
 
   &:hover {
     border-color: $link-hover-color;
@@ -34,8 +34,8 @@ a.btn-circle {
   transition: all linear 0.1s;
 
   &:hover {
-    background-color: $secondary;
-    color: $balanced-white;
+    background-color: $primary;
+    color: $white;
   }
 }
 
@@ -76,7 +76,7 @@ a.btn-circle {
 }
 
 .bg-white {
-  background-color: $balanced-white;
+  background-color: $white;
   color: #222;
 
   h1, h2, h3, h4, h5, h6 {
@@ -124,4 +124,74 @@ a.btn-circle {
   @extend .btn;
   @extend .btn-lg;
   @extend .btn-primary;
+}
+
+%hero {
+  @extend .container;
+
+  position: relative;
+
+  .highlight {
+    color: $primary;
+  }
+
+  .content {
+    @extend .row;
+    @extend .justify-content-center;
+
+    .pic {
+      @extend .col-6;
+      @extend .col-sm-5;
+      @extend .col-md-3;
+
+      img {
+        @extend .img-fluid;
+        border-radius: 50%;
+        border: $info 5px solid;
+      }
+    }
+
+    .intro {
+      @extend .col-8;
+
+      h1 {
+        @extend .text-center;
+        @extend .text-md-left;
+        opacity: 0.8;
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        @extend .mt-4;
+        @extend .text-center;
+        @extend .text-md-left;
+
+        color: $heavy-yellow;
+        text-align: center;
+        font-size: 2.7rem;
+      }
+    }
+
+    .leads {
+      @extend .mt-md-5;
+      @extend .text-center;
+      @extend .text-md-left;
+      margin-top: 1rem;
+
+      .lead {
+        opacity: 0.8;
+      }
+
+      .lead-1 {
+      }
+      .lead-2 {
+        @extend .d-none;
+        @extend .d-md-block;
+      }
+      .lead-3 {
+        @extend .d-none;
+        @extend .d-lg-block;
+      }
+    }
+  }
 }

@@ -21,102 +21,43 @@
   }
 
   .hero {
-    @extend .container-fluid;
-    @extend .invert;
+    @extend %hero;
 
     min-height: 63vh;
-    position: relative;
-    padding-top: 10rem;
+    margin-top: 6vh;
     padding-bottom: 5rem;
+  }
 
-    @extend %cover;
-    background-image: url('/landing/hero-cover.jpg');
-    background-origin: border-box;
+  .cta {
+    @extend .push-down-wrapper;
+    @extend .d-flex;
+    @extend .flex-row;
+    @extend .justify-content-center;
+    text-align: center;
 
-    .content {
-      @extend .row;
-      @extend .justify-content-center;
+    .left {
+      margin: 1em;
       @extend .text-center;
+      @extend .text-sm-right;
 
-      .pic {
-        display: none;
-      }
-
-      .intro {
-        @extend .col-12;
-        @extend .text-center;
-
-        h1 {
-          color: $white;
-          @extend .text-center;
-          @extend .mt-4;
-        }
-
-        h2 {
-          @extend .mt-3;
-          @extend .text-center;
-
-          font-family: $font-family-base;
-          font-size: 1.5rem;
-          color: $white;
-        }
-      }
-
-      .leads {
-        @extend .mt-md-5;
-        @extend .text-center;
-        @extend .text-md-left;
-        margin-top: 1rem;
-
-        .lead {
-          opacity: 0.8;
-        }
-
-        .lead-1 {
-        }
-
-        .lead-2 {
-          @extend .d-none;
-          @extend .d-md-block;
-        }
-        .lead-3 {
-          @extend .d-none;
-          @extend .d-lg-block;
-        }
+      a {
+        @extend .btn;
+        @extend .btn-lg;
+        @extend .btn-primary;
       }
     }
 
-    .cta {
-      @extend .push-down-wrapper;
-      @extend .d-flex;
-      @extend .flex-row;
-      @extend .justify-content-center;
-      text-align: center;
+    .right {
+      margin: 1em;
+      @extend .d-none;
+      @extend .d-sm-block;
+      @extend .text-center;
+      @extend .text-sm-left;
 
-      .left {
-        margin: 1em;
-        @extend .text-center;
-        @extend .text-sm-right;
-
-        a {
-          @extend .btn;
-          @extend .btn-lg;
-          @extend .btn-primary;
-        }
-      }
-
-      .right {
-        margin: 1em;
-        @extend .d-none;
-        @extend .d-sm-block;
-        @extend .text-center;
-        @extend .text-sm-left;
-
-        a {
-          @extend .btn;
-          @extend .btn-lg;
-          @extend .btn-outline-primary;
-        }
+      a {
+        @extend .btn;
+        @extend .btn-lg;
+        @extend .btn-outline-primary;
       }
     }
   }
@@ -184,12 +125,17 @@
 
   .projects {
     @extend .container;
+    padding: 0.9rem 0 4rem 0;
 
     .items {
       @extend .card-columns;
 
       .item {
         @extend .card;
+
+        color: $white;
+        background-color: $heavy-purple;
+        border-color: $heavy-yellow;
 
         &.priority-1 {
           @extend .d-none;
@@ -201,6 +147,7 @@
 
           h3 {
             @extend .card-title;
+            color: $primary;
           }
           p {
             @extend .card-text;
@@ -209,6 +156,8 @@
 
         .badges {
           @extend .card-footer;
+          border-top: 1px solid rgba($heavy-yellow, 0.2);
+          background-color: rgba($heavy-yellow, 0.1);
 
           .badge {
             @extend .badge-pill;
@@ -224,6 +173,11 @@
     @extend .jumbotron;
     @extend .jumbotron-fluid;
 
+    h2 {
+      color: $dark;
+      margin-bottom: 2rem;
+    }
+
     .items {
       @extend .row;
       @extend .align-items-center;
@@ -236,6 +190,11 @@
 
         img {
           @extend .img-fluid;
+          opacity: 0.8;
+
+          &:hover {
+            opacity: 1;
+          }
         }
 
       }
@@ -246,14 +205,14 @@
   .benefits {
     @extend .container-fluid;
     @extend .invert;
+
     margin-bottom: 0;
     margin-top: 0;
 
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 
     h2 {
-      font-family: 'PT Serif', serif;
     }
 
     & > div {
@@ -269,7 +228,6 @@
         @extend .col-md-4;
 
         h3 {
-          font-family: $font-family-base;
         }
       }
     }
@@ -300,9 +258,9 @@
       .item {
         @extend .card;
 
-        color: $balanced-white;
+        color: $white;
         background-color: $body-bg;
-        border-color: $secondary;
+        border-color: lighten($body-bg, 10%);
 
         &.hide-on-small {
           @extend .d-none;
@@ -342,8 +300,7 @@
   }
 
   .contact {
-    @extend .bg-white;
-    @extend .container-fluid;
+    @extend .container;
     padding-top: 0.9rem;
 
     .content {
@@ -355,9 +312,6 @@
         margin: 1rem;
         padding: 1rem;
         @extend .col-8;
-        background-color: darken($white, 4%);
-        border: 1px solid darken($white, 6%);
-        border-radius: 0.5rem;
       }
     }
   }

@@ -10,6 +10,11 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 
+  .hero {
+    @extend %hero;
+    margin-top: 1rem;
+  }
+
   .items {
     @extend .container;
     @extend .bg-white;
@@ -25,7 +30,16 @@
       padding: 2rem;
 
       &.odd {
-        background-color: darken($white, 1%);
+        background-color: darken($white, 1.5%);
+      }
+
+      h2 a {
+        color: $dark;
+
+        &:hover {
+          color: $primary;
+          text-decoration: none;
+        }
       }
 
       .content {

@@ -7,18 +7,16 @@
 @import "../utils";
 
 .header {
-  @extend .container;
-  @extend .bg-white;
+  @extend .container-fluid;
+  @extend .bg-translucent;
   padding: 0;
 }
 
 .main-navbar {
   @extend .navbar;
   @extend .navbar-expand-sm;
-  @extend .navbar-light;
+  @extend .navbar-dark;
   @extend .justify-content-center;
-
-  font-family: $headings-small-font-family;
 
   .brand {
     @extend .navbar-brand;
@@ -42,6 +40,7 @@
 
     & > div {
       @extend .navbar-nav;
+      @extend .justify-content-center;
     }
 
     a {
@@ -49,7 +48,8 @@
       margin-left: 1rem;
 
       &:hover {
-        color: $primary !important;
+        opacity: 0.9;
+        text-decoration: none;
       }
     }
   }

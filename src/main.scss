@@ -1,11 +1,12 @@
 // Custom Colors
 // =============
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Roboto|Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand:400,400i,600');
 
-$font-family-base: 'PT Serif', serif;
-$headings-font-family: 'Roboto Condensed', sans-serif;
-$headings-font-family-sans: 'Roboto Condensed', sans-serif;
-$headings-small-font-family: 'Roboto', sans-serif;
+$font-family-base: 'Quicksand', sans-serif;
+$headings-font-family: 'EB Garamond', serif;
+
+$headings-font-family-sans: $font-family-base;
+$headings-small-font-family: $headings-font-family;
 
 @import "./colors.scss";
 
@@ -18,8 +19,8 @@ $headings-small-font-family: 'Roboto', sans-serif;
 // Optional
 // ========
 @import "bootstrap/reboot";
-@import "bootstrap/type.scss";
-@import "bootstrap/print.scss";
+@import "bootstrap/type";
+@import "bootstrap/print";
 
 // Custom Design
 // =============
@@ -27,6 +28,7 @@ html {
 }
 
 body {
+  background: url("/pattern.png") repeat;
   scroll-behavior: smooth;
 }
 
