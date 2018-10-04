@@ -1,5 +1,6 @@
-<div class="row links text-center">
-    {{ with .Site.Author.twitter }}
+<div class="links">
+
+{{ with .Site.Author.twitter }}
     <div class="col">
         <a href="https://twitter.com/{{ . }}"
            class="btn-circle"
@@ -8,9 +9,9 @@
             <i class="fab fa-twitter"></i>
         </a>
     </div>
-    {{ end }}
+{{ end }}
 
-    {{ with .Site.Author.github }}
+{{ with .Site.Author.github }}
     <div class="col">
         <a href="https://github.com/{{ . }}"
            class="btn-circle"
@@ -19,9 +20,9 @@
             <i class="fab fa-github"></i>
         </a>
     </div>
-    {{ end }}
+{{ end }}
 
-    {{ with .Site.Author.blog }}
+{{ with .Site.Author.blog }}
     <div class="col">
         <a href="{{ . }}"
            class="btn-circle"
@@ -30,9 +31,9 @@
             <i class="far fa-rss"></i>
         </a>
     </div>
-    {{ end }}
+{{ end }}
 
-    {{ with .Site.Author.linkedin }}
+{{ with .Site.Author.linkedin }}
     <div class="col">
         <a href="https://linkedin.com/in/{{ . }}"
            class="btn-circle"
@@ -41,9 +42,9 @@
             <i class="fab fa-linkedin"></i>
         </a>
     </div>
-    {{ end }}
+{{ end }}
 
-    {{ with .Site.Author.angellist }}
+{{ with .Site.Author.angellist }}
     <div class="col">
         <a href="https://angel.co/{{ . }}"
            class="btn-circle"
@@ -52,5 +53,5 @@
             <i class="fab fa-angellist"></i>
         </a>
     </div>
-    {{ end }}
+{{ end }}
 </div>

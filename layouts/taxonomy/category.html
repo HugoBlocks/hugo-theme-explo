@@ -1,0 +1,21 @@
+{{/* Sync with _default/list.html too! */}}
+
+{{ define "main" }}
+{{ partial "components/header.html" . }}
+
+<div class="posts">
+{{ partial "posts/hero" . }}
+
+    <div class="content-wrapper white-bg">
+        <div class="marged">
+            <div class="container-fluid">
+                <section class="main">
+                {{ partial "posts/posts" . }}
+                </section>
+            </div>
+        </div>
+
+    {{ partial "subscribe.html" . }}
+    </div>
+</div>
+{{ end }}

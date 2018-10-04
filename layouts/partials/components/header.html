@@ -1,33 +1,38 @@
-<div class="container-fluid blog-header">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-translucent justify-content-center">
-
-        <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+<div class="header">
+    <nav class="main-navbar ">
+        <a class="brand" href="{{ .Site.BaseURL }}">
         {{ with .Params.Navbar.Logo }}
-            <img src="{{ . }}" height="42" class="d-inline-block align-top" alt="{{ .Site.Title }}">
+            <img src="{{ . }}" alt="{{ .Site.Title }}">
         {{ end }}
         {{ with .Params.Navbar.Title }}
-                {{ . }}
-                {{ end }}
+            {{ . }}
+        {{ end }}
         </a>
 
-        <button class="navbar-toggler nav-link navbar-toggler-right align-middle" type="button"
+        <button class="collapse-button" type="button"
                 data-toggle="collapse"
                 data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
             <i class="fa fa-bars"></i>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <div class="navbar-nav">
+        <div class="collapsable-content" id="navbarNav">
+            <div>
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-                <a class="nav-link {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
+            {{ if .Page }}
+
+                <a class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
                 {{ if .Pre }}
                    target="{{ .Pre }}"
                 {{ end }}
                    href="{{ .URL | absLangURL }}">
+                {{ with .Page.Params.icon }}
+                    <i class="far {{ . }} mr-1"></i>
+                {{ end }}
                 {{ .Name }}
                 </a>
+            {{ end }}
             {{ end }}
 
             {{ partial "components/i18n-switch" . }}

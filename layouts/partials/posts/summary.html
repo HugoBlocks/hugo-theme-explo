@@ -1,0 +1,37 @@
+<div itemscope itemtype="http://schema.org/CreativeWork" class="{{ .Section }} col-md-10">
+    <div class="post-content">
+        <div class="post-body">
+
+        {{ with .Param "tags" }}
+        {{ range . }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+            <a href="{{ .Permalink }}" title="{{ $name }}">{{ $name }}</a>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{ with .Param "categories" }}
+        {{ range . }}
+        {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+            <a href="{{ .Permalink }}" title="{{ $name }}">{{ $name }}</a>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+            <h2 itemprop="headline" class="post-title">
+                <a class="post-link" href="{{ .Permalink }}">
+                {{ .Title }}
+                </a>
+            </h2>
+            <p itemprop="description" class="post-text">
+            {{ .Description }}
+            </p>
+            <a class="post-link post-read-more btn button-block btn-outline-primary"
+               href="{{ .Permalink }}">
+            {{ i18n "readmore" }}
+            </a>
+        </div>
+    </div>
+</div>

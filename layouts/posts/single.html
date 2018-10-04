@@ -1,0 +1,48 @@
+{{ define "main" }}
+{{ partial "components/header.html" . }}
+
+<div class="posts single">
+    <div class="white-bg">
+    {{ with .Params.cover }}
+        <div class="cover"
+             style="background-image: url('{{ . | absURL }}');"
+        ></div>
+    {{ end }}
+
+    {{ if .Params.categories }}
+        <h4 class="categories">
+        {{ range .Params.categories }}
+        {{ . }}
+                {{ end }}
+        </h4>
+    {{ end }}
+
+
+        <div class="container single">
+            <section class="main">
+                <div class="row justify-content-center post-title">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <h1>{{ .Title }}</h1>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center post-content">
+                    <div class="col-12 col-md-10 col-lg-8">
+                    {{ .Content }}
+                    </div>
+                </div>
+            </section>
+
+        {{ partial "pagination/single" . }}
+
+        {{ partial "subscribe.html" . }}
+
+            <div class="row comments">
+                <div class="col-12">
+                {{ template "_internal/disqus.html" . }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

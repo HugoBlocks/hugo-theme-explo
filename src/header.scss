@@ -1,0 +1,46 @@
+@import "bootstrap/bootstrap";
+@import "./utils";
+
+.header {
+  @extend .container-fluid;
+  padding: 0;
+}
+
+.main-navbar {
+  @extend .navbar;
+  @extend .navbar-expand-sm;
+  @extend .navbar-dark;
+  @extend .bg-translucent;
+  @extend .justify-content-center;
+
+  .brand {
+    @extend .navbar-brand;
+
+    img {
+      @extend .d-inline-block;
+      @extend .align-top;
+      height: 42px;
+    }
+  }
+
+  .collapse-button {
+    @extend .navbar-toggler;
+    @extend .nav-link;
+    @extend .align-middle;
+  }
+
+  .collapsable-content {
+    @extend .collapse;
+    @extend .navbar-collapse;
+    @extend .justify-content-center;
+
+    & > div {
+      @extend .navbar-nav;
+    }
+
+    a {
+      @extend .nav-link;
+      margin-left: 1rem;
+    }
+  }
+}

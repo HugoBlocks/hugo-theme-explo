@@ -4,6 +4,11 @@ A Hugo Theme for Explorators.
 
 https://lsenta.io
 
+## Todo:
+
+- list blocks
+- normalize every blocks
+
 ## Build
 
 Use `npm` or `yarn` to compile the SASS code,

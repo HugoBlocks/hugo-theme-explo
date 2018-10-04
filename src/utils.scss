@@ -1,0 +1,44 @@
+@import "./colors";
+@import "bootstrap/bootstrap";
+
+.push-down-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.btn-circle {
+  border: 2px solid $heavy-yellow;
+  display: inline-block;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  line-height: 5.7rem;
+
+  &:hover {
+    border-color: $link-hover-color;
+  }
+}
+
+a.btn-circle {
+  transition: all linear 0.1s;
+
+  &:hover {
+    background-color: $heavy-yellow;
+    color: $balanced-white;
+  }
+}
+
+.bg-translucent {
+  background-color: #ffffff0a;
+}
+
+.invert {
+  background-color: $heavy-yellow;
+  color: $heavy-purple;
+
+  h2 {
+    color: $heavy-purple;
+  }
+}
+

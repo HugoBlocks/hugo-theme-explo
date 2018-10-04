@@ -2,10 +2,9 @@
 {{ partial "components/header.html" . }}
 
 <div class="landing">
-    {{ partial "landing/hero.html" . }}
-    {{ partial "landing/benefits.html" . }}
-    {{ partial "landing/features.html" . }}
-    {{ partial "landing/references.html" . }}
-    {{ partial "contact.html" . }}
+{{ range .Params.blocks }}
+    {{ $block := (printf "%s%s" "blocks/" .kind ) }}
+    {{ partial $block (dict "content" . "Site" $.Site) }}
+{{ end }}
 </div>
 {{ end }}

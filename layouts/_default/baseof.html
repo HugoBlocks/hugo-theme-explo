@@ -1,79 +1,64 @@
 <!DOCTYPE html>
-<html lang="{{ if .Params.LanguageCode }}{{ .Params.LanguageCode }}{{ else }}{{ .Site.LanguageCode }}{{ end }}">
+<html lang="{{ if .Params.LanguageCode }}{{ .Params.LanguageCode }}{{ else }}{{ $.Site.LanguageCode }}{{ end }}">
 <head>
-{{ with .Site.Params.Analytics.Google }}
-    {{ partial "analytics/google.html" .}}
-{{ end }}
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="icon" href="/favicon.png">
-
-    {{ with .Params.SEODescription }}
-    <meta name="description" content="{{ . }}">
-    {{ end }}
-
-    {{ with .Params.SEOKeywords }}
-    <meta name="keywords" content="{{ range $i, $e := . }}{{- if $i }},{{ end }}{{ $e }}{{ end }}">
-    {{ end }}
-
     <meta property="og:url" content="{{ .Permalink }}"/>
 
-    {{ if eq .Kind "page" }}
-    <meta property="og:type" content="article"/>
-    <meta name="twitter:card" content="summary"/>
-    {{ end }}
+{{ with $.Site.Params.Analytics.Google }}
+    {{ partial "analytics/google.html" . }}
+{{ end }}
 
-    {{ with .Site.Author.twitter }}
-    <meta name="twitter:site" content="@{{ . }}"/>
-    {{ end }}
+{{ with $.Site.Params.favicon }}
+    <link rel="icon" href="{{ . }}">
+{{ end }}
 
-    {{ if .Title }}
-    <meta property="og:title" content="{{ .Title }}"/>
-    <meta name="twitter:title" content="{{ .Title }}"/>
-    {{ else }}
-    <meta property="og:title" content="{{ .Site.Title }}"/>
-    <meta name="twitter:title" content="{{ .Site.Title }}"/>
-    {{ end }}
-
-    {{ with .Params.SEODescription | default .Description }}
+{{ with .Params.SEO.Description | default .Params.Description | default $.Site.Params.SEO.Description }}
+    <meta name="description" content="{{ . }}">
     <meta property="og:description" content="{{ . }}"/>
     <meta name="twitter:description" content="{{ . }}"/>
-    {{ end }}
+{{ end }}
 
-    {{ if .Params.cover }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.cover }}"/>
-    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.cover }}"/>
-    {{ else if .Site.Author.image }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Author.image }}"/>
-    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Site.Author.image }}"/>
-    {{ end }}
+{{ with .Params.SEO.Keywords | default $.Site.Params.SEO.Keywords }}
+    <meta name="keywords" content="{{ range $i, $e := . }}{{- if $i }},{{ end }}{{ $e }}{{ end }}">
+{{ end }}
 
-    {{ if .IsTranslated }}
-    {{ range .Translations }}
+{{ with .Params.SEO.Title | default .Params.Title | default $.Site.Params.SEO.Title | default $.Site.Title }}
+    <meta property="og:title" content="{{ . }}"/>
+    <meta name="twitter:title" content="{{ . }}"/>
+{{ end }}
+
+{{ if eq .Kind "page" }}
+    <meta property="og:type" content="article"/>
+    <meta name="twitter:card" content="summary"/>
+{{ end }}
+
+{{ with $.Site.Author.twitter }}
+    <meta name="twitter:site" content="@{{ . }}"/>
+{{ end }}
+
+{{ with .Params.cover | default $.Site.Params.cover }}
+    <meta property="og:image" content="{{ $.Site.BaseURL }}{{ . }}"/>
+    <meta name="twitter:image" content="{{ $.Site.BaseURL }}{{ . }}"/>
+{{ end }}
+
+{{ if .IsTranslated }}
+{{ range .Translations }}
     <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}"/>
-    {{ end }}
-    {{ end }}
+{{ end }}
+{{ end }}
 
     <!-- Page Title -->
     <title>
-        {{- block "title" . -}}
-        {{ .Params.SEOTitle | default .Title }} -
-        {{ .Site.Title }}
-        {{- end -}}
+    {{- block "title" . -}}
+        {{ with .Params.SEO.Title | default .Params.Title | default $.Site.Params.SEO.Title | default $.Site.Title }}
+        {{ . }}
+        {{ end }}
+    {{- end -}}
     </title>
 
-    {{ with .Site.Params.fontAwesomeID }}
-    <script src="https://use.fontawesome.com/{{ . }}.js"></script>
-    {{ end }}
-
     <script src="/js/smooth-scroll.polyfills.min.js"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,600" rel="stylesheet">
 
     <!-- Explo -->
     <link rel="stylesheet" href="/css/explo.css">
@@ -88,20 +73,20 @@
 </head>
 <body>
 {{ block "main" . }}{{ end }}
-{{ partial "footer.html" . }}
+{{ partial "components/footer.html" . }}
 
 <script>
-  var scroll = new SmoothScroll('a[href*="#"]');
+    var scroll = new SmoothScroll("a[href*=\"#\"]")
 </script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 </body>
 </html>
